@@ -1,11 +1,22 @@
-FROM alpine:3.1
+FROM golang:1.8-alpine
 
-ADD example-config.json /opt/gremlinproxy/
-ADD gremlinproxy /opt/gremlinproxy/
-CMD ["/opt/gremlinproxy/gremlinproxy", "-c", "/opt/gremlinproxy/example-config.json"]
+USER root
 
-# Expose control port.
+RUN export GOPATH=$HOME/go && \
+    export PATH=$PATH:$GOPATH/bin && \
+    apk update && apk upgrade && \
+    apk add --no-cache bash git openssh
+
+ENV GREMLIN_PROXY="$GOPATH/src/github.com/gremlinproxy"
+
+RUN mkdir -p "$GREMLIN_PROXY"
+RUN cd "$GOPATH/src/github.com" && \
+    git clone https://github.com/worldtiki/gremlinproxy.git && \
+    cd "$GREMLIN_PROXY" && \
+    go-wrapper download && \
+    go-wrapper install
+
+# Expose gremlinproxy's control port.
 EXPOSE 9876
 
-## IMPORTANT: expose all proxy ports that you want gremlinproxy to listen on for your application services (from the proxy block in config file)
-EXPOSE 7777
+ENTRYPOINT ["gremlinproxy"]
