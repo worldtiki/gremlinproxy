@@ -251,7 +251,7 @@ func copyBytes(dest, src *net.TCPConn, wg *sync.WaitGroup) {
 // proxyTCP is responsible for handling a new TCP connection.
 func (p *Proxy) proxyTCP(conn *net.TCPConn) {
 
-	globallog.Error("proxyTCP" )
+	globallog.WithField("test", "test").Debug("test")
 
 	//We can abort the connection immediately, in case of an Abort action.
 	//FIXME: Need to have a way to abort in the middle of a connection too.
