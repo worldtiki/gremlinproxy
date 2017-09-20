@@ -5,7 +5,7 @@ import (
 	"compress/gzip"
 	"compress/zlib"
 	"encoding/json"
-	"github.com/ResilienceTesting/gremlinproxy/config"
+	"github.com/worldtiki/gremlinproxy/config"
 	"io"
 	"io/ioutil"
 	"math/rand"

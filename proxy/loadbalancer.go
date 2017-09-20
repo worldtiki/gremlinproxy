@@ -1,7 +1,7 @@
 package proxy
 
 import (
-	"github.com/ResilienceTesting/gremlinproxy/config"
+	"github.com/worldtiki/gremlinproxy/config"
 	"github.com/Sirupsen/logrus"
 	"math/rand"
 	str "strings"

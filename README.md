@@ -26,7 +26,7 @@ gets back a HTTP 404, HTTP 503, etc.), delayed, or rewritten. The
 proxy can be controlled remotely using a REST API. Rules for various
 fault injection actions can be installed through this API. The
 [Gremlin resliency testing framework]
-(https://github.com/ResilienceTesting/gremlinsdk) provides a Python-based
+(https://github.com/worldtiki/gremlinsdk) provides a Python-based
 control plane library, to write high-level recipes, that will be
 automatically broken down into low-level fault injection commands to
 be executed by the gremlin proxy.

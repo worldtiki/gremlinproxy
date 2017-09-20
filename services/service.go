@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/ResilienceTesting/gremlinproxy/config"
-	"github.com/ResilienceTesting/gremlinproxy/proxy"
+	"github.com/worldtiki/gremlinproxy/config"
+	"github.com/worldtiki/gremlinproxy/proxy"
 )
 
 // Service is an encapsulation of a remote endpoint. It contains the proxy
