@@ -78,7 +78,7 @@ func (p *Proxy) getRule(r MessageType, reqID string, data []byte) Rule {
 	defer p.ruleLock.RUnlock()
 	// globallog.Debug("In getRule")
 	for counter, rule := range p.rules[r] {
-		globallog.WithField("ruleCounter", counter).Debug("Rule counter")
+		globallog.WithField("ruleCounter", counter).Debug("Rulea counter")
 		//  If request ID is empty, do not match unless wildcard rule
 		if reqID == "" {
 			if (rule.HeaderPattern == "*" || rule.BodyPattern == "*") {
