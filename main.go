@@ -55,7 +55,7 @@ func main() {
 	config.TrackingHeader = conf.Router.TrackingHeader
 	log.WithField("trackingHeader", config.TrackingHeader).Debug("Config value")
 	if config.TrackingHeader == "" {
-		panic("No trackingheader provided")
+		//panic("No trackingheader provided")
 	}
 
 	// Start the router
