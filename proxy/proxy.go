@@ -329,7 +329,10 @@ func (p *Proxy) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	var decodedData []byte
 	var cont bool
 	data, err := readBody(req.Body)
-	if (reqID != "") {
+
+	globallog.Error("## reqID: " + reqID)
+	globallog.Error("## config.TrackingHeader: " + config.TrackingHeader)
+	if (reqID != "" || config.TrackingHeader == "") {
 		// Process the request, see if any rules match it.
 		decodedData, err := decodeBody(data, req.Header.Get("content-type"),
 			req.Header.Get("content-encoding"))
